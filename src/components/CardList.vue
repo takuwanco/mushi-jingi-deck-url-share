@@ -153,6 +153,7 @@ const hidePreview = () => {
     <div
       :style="{
         display: 'flex',
+        justifyContent: 'space-between',
         alignItems: 'center',
         gap: '0.5rem',
         borderBottom: isExpanded ? '1px solid var(--border-color)' : 'none',
@@ -160,14 +161,15 @@ const hidePreview = () => {
         marginBottom: isExpanded ? '0.75rem' : '0',
         flexWrap: 'wrap',
         flexShrink: 0,
+        cursor: 'pointer',
       }"
+      @click="emit('toggle')"
     >
       <div
-        :style="{ display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer', marginRight: '0.25rem' }"
-        @click="emit('toggle')"
+        :style="{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginRight: '0.25rem' }"
       >
         <span :style="{ transform: `rotate(${isExpanded ? 0 : -90}deg)`, transition: 'transform 0.2s', fontSize: '1.1rem' }">▼</span>
-        <h2 :style="{ margin: 0, fontSize: '1.5rem', fontWeight: 700 }">Card Library</h2>
+        <h2 :style="{ margin: 0, fontSize: '1.5rem', fontWeight: 700 }">カード・ライブラリ</h2>
         <span :style="{ fontSize: '0.85rem', color: 'var(--text-secondary)' }">({{ filteredCards.length }})</span>
       </div>
 
