@@ -24,6 +24,7 @@ interface Filters {
 
 const PREVIEW_WIDTH = 315
 const PREVIEW_OFFSET = 16
+const BASE_URL = import.meta.env.BASE_URL
 
 const cards = ref<CardMeta[]>(normalizedCards)
 const hoveredCard = ref<string | null>(null)
@@ -111,6 +112,8 @@ const onCardImageError = (event: Event, cardId: string) => {
   parent.style.color = 'var(--text-secondary)'
   parent.style.fontSize = '0.8rem'
 }
+
+const getImageUrl = (size: 'sc' | 'lc', cardId: string) => `${BASE_URL}img/${size}/${cardId}.jpg`
 </script>
 
 <template>
@@ -236,7 +239,7 @@ const onCardImageError = (event: Event, cardId: string) => {
           @mouseleave="() => { hoveredCard = null; mousePos = null }"
         >
           <img
-            :src="`/img/sc/${card.id}.jpg`"
+            :src="getImageUrl('sc', card.id)"
             :alt="card.name"
             :title="`${card.name} [${card.color}/${card.types.join('・')}/${card.rarelity}/コスト${card.cost}]`"
             :style="{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }"
@@ -249,7 +252,7 @@ const onCardImageError = (event: Event, cardId: string) => {
     <Teleport to="body">
       <img
         v-if="hoveredCard && mousePos"
-        :src="`/img/lc/${hoveredCard}.jpg`"
+        :src="getImageUrl('lc', hoveredCard)"
         :alt="hoveredCard"
         :style="getPreviewStyle()"
       />

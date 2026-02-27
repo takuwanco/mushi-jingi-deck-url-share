@@ -16,6 +16,7 @@ const emit = defineEmits<{
 
 const PREVIEW_WIDTH = 315
 const PREVIEW_OFFSET = 16
+const BASE_URL = import.meta.env.BASE_URL
 
 const hoveredIndex = ref<number | null>(null)
 const mousePos = ref<{ x: number; y: number } | null>(null)
@@ -57,6 +58,8 @@ const getPreviewStyle = (): CSSProperties => {
     boxShadow: '0 10px 30px rgba(0,0,0,0.8)',
   }
 }
+
+const getImageUrl = (size: 'sc' | 'lc', cardId: string) => `${BASE_URL}img/${size}/${cardId}.jpg`
 </script>
 
 <template>
@@ -188,7 +191,7 @@ const getPreviewStyle = (): CSSProperties => {
         >
           <img
             v-if="cardId"
-            :src="`/img/sc/${cardId}.jpg`"
+            :src="getImageUrl('sc', cardId)"
             :alt="cardId"
             :style="{
               width: '100%',
@@ -206,7 +209,7 @@ const getPreviewStyle = (): CSSProperties => {
     <Teleport to="body">
       <img
         v-if="hoveredCardId && mousePos"
-        :src="`/img/lc/${hoveredCardId}.jpg`"
+        :src="getImageUrl('lc', hoveredCardId)"
         :alt="hoveredCardId"
         :style="getPreviewStyle()"
       />
