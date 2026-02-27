@@ -16,6 +16,9 @@ const emit = defineEmits<{
 
 const PREVIEW_WIDTH = 315
 const PREVIEW_OFFSET = 16
+const PREVIEW_MARGIN = 12
+const PREVIEW_ASPECT_RATIO = 88 / 63
+const PREVIEW_HEIGHT = PREVIEW_WIDTH * PREVIEW_ASPECT_RATIO
 const BASE_URL = import.meta.env.BASE_URL
 
 const hoveredIndex = ref<number | null>(null)
@@ -41,10 +44,12 @@ const getPreviewStyle = (): CSSProperties => {
   if (!mousePos.value) return {}
 
   const overflowsRight = mousePos.value.x + PREVIEW_OFFSET + PREVIEW_WIDTH > window.innerWidth
-  const x = overflowsRight
+  const rawX = overflowsRight
     ? mousePos.value.x - PREVIEW_WIDTH - PREVIEW_OFFSET
     : mousePos.value.x + PREVIEW_OFFSET
-  const y = Math.min(mousePos.value.y - 20, window.innerHeight - 300)
+  const x = Math.max(PREVIEW_MARGIN, Math.min(rawX, window.innerWidth - PREVIEW_WIDTH - PREVIEW_MARGIN))
+  const rawY = mousePos.value.y - 20
+  const y = Math.max(PREVIEW_MARGIN, Math.min(rawY, window.innerHeight - PREVIEW_HEIGHT - PREVIEW_MARGIN))
 
   return {
     position: 'fixed',
@@ -187,6 +192,7 @@ const hidePreview = () => {
           @pointerup="hidePreview"
           @pointercancel="hidePreview"
           @pointerleave="hidePreview"
+          @contextmenu.prevent
         >
           <img
             v-if="cardId"
