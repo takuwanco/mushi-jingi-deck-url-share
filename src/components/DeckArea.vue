@@ -110,8 +110,8 @@ const hidePreview = () => {
         @click="emit('toggle')"
       >
         <div :style="{ display: 'flex', alignItems: 'center', gap: '0.5rem' }">
-          <span :style="{ transform: `rotate(${isExpanded ? 0 : -90}deg)`, transition: 'transform 0.2s' }">▼</span>
-          <span>Deck ({{ filledCount }} / 20)</span>
+          <span :style="{ transform: `rotate(${isExpanded ? 0 : -90}deg)`, transition: 'transform 0.2s', fontSize: '1.1rem' }">▼</span>
+          <span :style="{ fontSize: '1.5rem', fontWeight: 700 }">Deck ({{ filledCount }} / 20)</span>
         </div>
         <div
           :style="{ display: 'flex', alignItems: 'center', gap: '0.75rem' }"
