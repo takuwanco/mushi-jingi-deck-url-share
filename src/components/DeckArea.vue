@@ -60,6 +60,21 @@ const getPreviewStyle = (): CSSProperties => {
 }
 
 const getImageUrl = (size: 'sc' | 'lc', cardId: string) => `${BASE_URL}img/${size}/${cardId}.jpg`
+
+const showPreview = (index: number, event: PointerEvent) => {
+  hoveredIndex.value = index
+  mousePos.value = { x: event.clientX, y: event.clientY }
+}
+
+const movePreview = (event: PointerEvent) => {
+  if (hoveredIndex.value === null) return
+  mousePos.value = { x: event.clientX, y: event.clientY }
+}
+
+const hidePreview = () => {
+  hoveredIndex.value = null
+  mousePos.value = null
+}
 </script>
 
 <template>
@@ -167,27 +182,11 @@ const getImageUrl = (size: 'sc' | 'lc', cardId: string) => `${BASE_URL}img/${siz
             position: 'relative',
           }"
           @click="cardId && emit('remove', index)"
-          @mouseenter="
-            event => {
-              if (cardId) {
-                hoveredIndex = index
-                mousePos = { x: (event as MouseEvent).clientX, y: (event as MouseEvent).clientY }
-              }
-            }
-          "
-          @mousemove="
-            event => {
-              if (cardId) {
-                mousePos = { x: (event as MouseEvent).clientX, y: (event as MouseEvent).clientY }
-              }
-            }
-          "
-          @mouseleave="
-            () => {
-              hoveredIndex = null
-              mousePos = null
-            }
-          "
+          @pointerdown="event => cardId && showPreview(index, event as PointerEvent)"
+          @pointermove="event => movePreview(event as PointerEvent)"
+          @pointerup="hidePreview"
+          @pointercancel="hidePreview"
+          @pointerleave="hidePreview"
         >
           <img
             v-if="cardId"

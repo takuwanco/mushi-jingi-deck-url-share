@@ -114,6 +114,21 @@ const onCardImageError = (event: Event, cardId: string) => {
 }
 
 const getImageUrl = (size: 'sc' | 'lc', cardId: string) => `${BASE_URL}img/${size}/${cardId}.jpg`
+
+const showPreview = (cardId: string, event: PointerEvent) => {
+  hoveredCard.value = cardId
+  mousePos.value = { x: event.clientX, y: event.clientY }
+}
+
+const movePreview = (event: PointerEvent) => {
+  if (!hoveredCard.value) return
+  mousePos.value = { x: event.clientX, y: event.clientY }
+}
+
+const hidePreview = () => {
+  hoveredCard.value = null
+  mousePos.value = null
+}
 </script>
 
 <template>
@@ -234,9 +249,11 @@ const getImageUrl = (size: 'sc' | 'lc', cardId: string) => `${BASE_URL}img/${siz
             backgroundColor: 'var(--bg-primary)',
           }"
           @click="emit('add', card.id)"
-          @mouseenter="event => { hoveredCard = card.id; mousePos = { x: (event as MouseEvent).clientX, y: (event as MouseEvent).clientY } }"
-          @mousemove="event => { mousePos = { x: (event as MouseEvent).clientX, y: (event as MouseEvent).clientY } }"
-          @mouseleave="() => { hoveredCard = null; mousePos = null }"
+          @pointerdown="event => showPreview(card.id, event as PointerEvent)"
+          @pointermove="event => movePreview(event as PointerEvent)"
+          @pointerup="hidePreview"
+          @pointercancel="hidePreview"
+          @pointerleave="hidePreview"
         >
           <img
             :src="getImageUrl('sc', card.id)"
