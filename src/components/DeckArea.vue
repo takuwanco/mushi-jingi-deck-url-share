@@ -121,6 +121,8 @@ const hidePreview = () => {
             :style="{
               fontSize: '0.95rem',
               padding: '0.45rem 0.9rem',
+              minHeight: '2.25rem',
+              lineHeight: '1.2',
               backgroundColor: copied ? 'rgba(16,185,129,0.15)' : 'var(--bg-dark)',
               border: '1px solid var(--border-color)',
               color: copied ? 'var(--accent-base)' : 'var(--text-primary)',
@@ -136,6 +138,8 @@ const hidePreview = () => {
             :style="{
               fontSize: '0.95rem',
               padding: '0.45rem 0.9rem',
+              minHeight: '2.25rem',
+              lineHeight: '1.2',
               backgroundColor: 'var(--bg-dark)',
               border: '1px solid var(--border-color)',
               color: filledCount > 0 ? 'var(--text-primary)' : 'var(--text-secondary)',

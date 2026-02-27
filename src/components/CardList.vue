@@ -211,6 +211,8 @@ const hidePreview = () => {
           :style="{
             fontSize: '0.95rem',
             padding: '0.45rem 0.9rem',
+            minHeight: '2.25rem',
+            lineHeight: '1.2',
             backgroundColor: 'var(--bg-dark)',
             border: '1px solid var(--border-color)',
             color: activeFilterCount > 0 ? 'var(--text-primary)' : 'var(--text-secondary)',

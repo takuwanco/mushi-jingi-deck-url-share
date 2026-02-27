@@ -51,6 +51,8 @@ onBeforeUnmount(() => {
       :style="{
         fontSize: '0.95rem',
         padding: '0.45rem 0.9rem',
+        minHeight: '2.25rem',
+        lineHeight: '1.2',
         borderRadius: '6px',
         border: `1px solid ${active ? 'var(--accent-base)' : 'var(--border-color)'}`,
         backgroundColor: active ? 'rgba(16,185,129,0.15)' : 'var(--bg-dark)',
