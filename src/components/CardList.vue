@@ -209,14 +209,14 @@ const hidePreview = () => {
         <button
           :disabled="activeFilterCount === 0"
           :style="{
-            fontSize: '0.85rem',
-            padding: '0.4rem 0.8rem',
-            backgroundColor: 'transparent',
+            fontSize: '0.95rem',
+            padding: '0.45rem 0.9rem',
+            backgroundColor: 'var(--bg-dark)',
             border: '1px solid var(--border-color)',
-            color: 'var(--text-secondary)',
+            color: activeFilterCount > 0 ? 'var(--text-primary)' : 'var(--text-secondary)',
             borderRadius: '6px',
             cursor: activeFilterCount > 0 ? 'pointer' : 'default',
-            opacity: activeFilterCount > 0 ? 1 : 0.35,
+            opacity: activeFilterCount > 0 ? 1 : 0.45,
           }"
           @click="resetFilters"
         >

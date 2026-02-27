@@ -119,11 +119,11 @@ const hidePreview = () => {
         >
           <button
             :style="{
-              fontSize: '0.85rem',
-              padding: '0.3rem 0.7rem',
-              backgroundColor: 'transparent',
+              fontSize: '0.95rem',
+              padding: '0.45rem 0.9rem',
+              backgroundColor: copied ? 'rgba(16,185,129,0.15)' : 'var(--bg-dark)',
               border: '1px solid var(--border-color)',
-              color: 'var(--text-secondary)',
+              color: copied ? 'var(--accent-base)' : 'var(--text-primary)',
               borderRadius: '6px',
               cursor: 'pointer',
             }"
@@ -134,14 +134,14 @@ const hidePreview = () => {
           <button
             :disabled="filledCount === 0"
             :style="{
-              fontSize: '0.85rem',
-              padding: '0.3rem 0.7rem',
-              backgroundColor: 'transparent',
+              fontSize: '0.95rem',
+              padding: '0.45rem 0.9rem',
+              backgroundColor: 'var(--bg-dark)',
               border: '1px solid var(--border-color)',
-              color: 'var(--text-secondary)',
+              color: filledCount > 0 ? 'var(--text-primary)' : 'var(--text-secondary)',
               borderRadius: '6px',
               cursor: filledCount > 0 ? 'pointer' : 'default',
-              opacity: filledCount > 0 ? 1 : 0.35,
+              opacity: filledCount > 0 ? 1 : 0.45,
             }"
             @click="emit('clear')"
           >

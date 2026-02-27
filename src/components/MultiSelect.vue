@@ -84,18 +84,18 @@ onBeforeUnmount(() => {
         :style="{
           display: 'flex',
           alignItems: 'center',
-          gap: '0.4rem',
-          padding: '0.35rem 0.75rem',
+          gap: '0.65rem',
+          padding: '0.52rem 0.85rem',
           cursor: 'pointer',
           color: 'var(--text-primary)',
-          fontSize: '0.85rem',
+          fontSize: '1.05rem',
           userSelect: 'none',
         }"
       >
         <input
           type="checkbox"
           :checked="selected.includes(option)"
-          :style="{ accentColor: 'var(--accent-base)' }"
+          :style="{ accentColor: 'var(--accent-base)', width: '1.1rem', height: '1.1rem' }"
           @change="toggle(option)"
         />
         {{ String(option) }}
