@@ -267,7 +267,7 @@ onBeforeUnmount(() => {
                 borderRadius: '999px',
                 backgroundColor: infoOpen ? 'rgba(16,185,129,0.15)' : 'var(--bg-dark)',
                 border: '1px solid var(--border-color)',
-                color: infoOpen ? 'var(--accent-base)' : 'var(--text-primary)',
+                color: infoOpen ? 'var(--accent-base)' : 'var(--text-secondary)',
                 fontSize: '1rem',
                 fontWeight: 700,
                 cursor: 'pointer',
