@@ -315,7 +315,7 @@ onBeforeUnmount(() => {
             }"
             @click="emit('clear')"
           >
-            全クリア
+            クリア
           </button>
         </div>
       </div>

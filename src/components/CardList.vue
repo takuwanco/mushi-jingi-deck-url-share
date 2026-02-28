@@ -313,7 +313,7 @@ onBeforeUnmount(() => {
           }"
           @click="resetFilters"
         >
-          全クリア
+          クリア
         </button>
       </div>
     </div>
