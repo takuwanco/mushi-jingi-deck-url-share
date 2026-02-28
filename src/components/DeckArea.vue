@@ -4,6 +4,7 @@ import { computed, onBeforeUnmount, onMounted, ref, type CSSProperties } from 'v
 interface Props {
   deck: string[]
   isExpanded: boolean
+  compact: boolean
 }
 
 const props = defineProps<Props>()
@@ -19,6 +20,8 @@ const PREVIEW_OFFSET = 16
 const PREVIEW_MARGIN = 12
 const PREVIEW_ASPECT_RATIO = 88 / 63
 const PREVIEW_HEIGHT = PREVIEW_WIDTH * PREVIEW_ASPECT_RATIO
+const LONG_PRESS_MS = 380
+const MOVE_CANCEL_PX = 12
 const BASE_URL = import.meta.env.BASE_URL
 const INFO_POPUP_WIDTH = 420
 const INFO_POPUP_MAX_HEIGHT = 420
@@ -27,6 +30,10 @@ const INFO_POPUP_OFFSET = 8
 
 const hoveredIndex = ref<number | null>(null)
 const mousePos = ref<{ x: number; y: number } | null>(null)
+const longPressTimer = ref<number | null>(null)
+const longPressTriggered = ref(false)
+const pointerStart = ref<{ x: number; y: number } | null>(null)
+const suppressTap = ref(false)
 const copied = ref(false)
 const infoOpen = ref(false)
 const infoButtonRef = ref<HTMLElement | null>(null)
@@ -88,6 +95,80 @@ const hidePreview = () => {
   mousePos.value = null
 }
 
+const clearLongPressTimer = () => {
+  if (longPressTimer.value !== null) {
+    window.clearTimeout(longPressTimer.value)
+    longPressTimer.value = null
+  }
+}
+
+const startLongPressPreview = (index: number, event: PointerEvent) => {
+  if (!props.compact || event.pointerType === 'mouse') {
+    showPreview(index, event)
+    return
+  }
+
+  suppressTap.value = false
+  longPressTriggered.value = false
+  pointerStart.value = { x: event.clientX, y: event.clientY }
+  clearLongPressTimer()
+  longPressTimer.value = window.setTimeout(() => {
+    longPressTriggered.value = true
+    hoveredIndex.value = index
+    mousePos.value = { x: event.clientX, y: event.clientY }
+  }, LONG_PRESS_MS)
+}
+
+const updateLongPressPreview = (event: PointerEvent) => {
+  if (!props.compact || event.pointerType === 'mouse') {
+    movePreview(event)
+    return
+  }
+
+  if (!pointerStart.value) return
+
+  const movedX = Math.abs(event.clientX - pointerStart.value.x)
+  const movedY = Math.abs(event.clientY - pointerStart.value.y)
+  if (movedX > MOVE_CANCEL_PX || movedY > MOVE_CANCEL_PX) {
+    clearLongPressTimer()
+    if (longPressTriggered.value) {
+      suppressTap.value = true
+      hidePreview()
+      longPressTriggered.value = false
+    }
+    pointerStart.value = null
+    return
+  }
+
+  if (longPressTriggered.value) {
+    movePreview(event)
+  }
+}
+
+const endLongPressPreview = (event: PointerEvent) => {
+  if (!props.compact || event.pointerType === 'mouse') {
+    hidePreview()
+    return
+  }
+
+  clearLongPressTimer()
+  if (longPressTriggered.value) {
+    suppressTap.value = true
+  }
+  longPressTriggered.value = false
+  pointerStart.value = null
+  hidePreview()
+}
+
+const handleDeckSlotClick = (cardId: string, index: number) => {
+  if (!cardId) return
+  if (props.compact && suppressTap.value) {
+    suppressTap.value = false
+    return
+  }
+  emit('remove', index)
+}
+
 const updateInfoPopupPosition = () => {
   if (!infoOpen.value || !infoButtonRef.value) return
 
@@ -135,6 +216,7 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('resize', updateInfoPopupPosition)
   window.removeEventListener('scroll', updateInfoPopupPosition, true)
+  clearLongPressTimer()
 })
 </script>
 
@@ -142,7 +224,7 @@ onBeforeUnmount(() => {
   <div
     class="glass-panel"
     :style="{
-      padding: '0.7rem 1.2rem',
+      padding: compact ? '0.6rem 0.8rem' : '0.7rem 1.2rem',
       display: 'flex',
       flexDirection: 'column',
       overflow: 'hidden',
@@ -156,30 +238,30 @@ onBeforeUnmount(() => {
         marginTop: 0,
         borderBottom: isExpanded ? '1px solid var(--border-color)' : 'none',
         paddingBottom: isExpanded ? '0.5rem' : '0',
-        marginBottom: isExpanded ? '1rem' : '0',
+        marginBottom: isExpanded ? (compact ? '0.75rem' : '1rem') : '0',
         transition: 'all 0.3s ease',
         flexShrink: 0,
       }"
     >
       <div
-        :style="{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer' }"
+        :style="{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', flexWrap: 'wrap', rowGap: '0.5rem' }"
         @click="emit('toggle')"
       >
         <div :style="{ display: 'flex', alignItems: 'center', gap: '0.5rem' }">
           <span :style="{ transform: `rotate(${isExpanded ? 0 : -90}deg)`, transition: 'transform 0.2s', fontSize: '1.1rem' }">▼</span>
-          <span :style="{ fontSize: '1.5rem', fontWeight: 700 }">デッキ ({{ filledCount }} / 20)</span>
+          <span :style="{ fontSize: compact ? '1.2rem' : '1.5rem', fontWeight: 700 }">デッキ ({{ filledCount }} / 20)</span>
         </div>
         <div
-          :style="{ display: 'flex', alignItems: 'center', gap: '0.75rem' }"
+          :style="{ display: 'flex', alignItems: 'center', gap: compact ? '0.45rem' : '0.75rem', flexWrap: 'wrap', marginLeft: compact ? 0 : 'auto' }"
           @click.stop
         >
           <div>
             <button
               ref="infoButtonRef"
               :style="{
-                width: '2.25rem',
-                height: '2.25rem',
-                minHeight: '2.25rem',
+                width: compact ? '2.6rem' : '2.25rem',
+                height: compact ? '2.6rem' : '2.25rem',
+                minHeight: compact ? '2.6rem' : '2.25rem',
                 lineHeight: '1',
                 borderRadius: '999px',
                 backgroundColor: infoOpen ? 'rgba(16,185,129,0.15)' : 'var(--bg-dark)',
@@ -203,8 +285,8 @@ onBeforeUnmount(() => {
           <button
             :style="{
               fontSize: '0.95rem',
-              padding: '0.45rem 0.9rem',
-              minHeight: '2.25rem',
+              padding: compact ? '0.55rem 0.95rem' : '0.45rem 0.9rem',
+              minHeight: compact ? '2.6rem' : '2.25rem',
               lineHeight: '1.2',
               backgroundColor: copied ? 'rgba(16,185,129,0.15)' : 'var(--bg-dark)',
               border: '1px solid var(--border-color)',
@@ -220,8 +302,8 @@ onBeforeUnmount(() => {
             :disabled="filledCount === 0"
             :style="{
               fontSize: '0.95rem',
-              padding: '0.45rem 0.9rem',
-              minHeight: '2.25rem',
+              padding: compact ? '0.55rem 0.95rem' : '0.45rem 0.9rem',
+              minHeight: compact ? '2.6rem' : '2.25rem',
               lineHeight: '1.2',
               backgroundColor: 'var(--bg-dark)',
               border: '1px solid var(--border-color)',
@@ -251,7 +333,7 @@ onBeforeUnmount(() => {
       <div
         :style="{
           display: 'grid',
-          gridTemplateColumns: 'repeat(10, 1fr)',
+          gridTemplateColumns: compact ? 'repeat(5, minmax(0, 1fr))' : 'repeat(10, 1fr)',
           gap: '0.5rem',
           paddingBottom: '0.5rem',
         }"
@@ -273,12 +355,12 @@ onBeforeUnmount(() => {
             cursor: cardId ? 'pointer' : 'default',
             position: 'relative',
           }"
-          @click="cardId && emit('remove', index)"
-          @pointerdown="event => cardId && showPreview(index, event as PointerEvent)"
-          @pointermove="event => movePreview(event as PointerEvent)"
-          @pointerup="hidePreview"
-          @pointercancel="hidePreview"
-          @pointerleave="hidePreview"
+          @click="handleDeckSlotClick(cardId, index)"
+          @pointerdown="event => cardId && startLongPressPreview(index, event as PointerEvent)"
+          @pointermove="event => updateLongPressPreview(event as PointerEvent)"
+          @pointerup="event => endLongPressPreview(event as PointerEvent)"
+          @pointercancel="event => endLongPressPreview(event as PointerEvent)"
+          @pointerleave="event => endLongPressPreview(event as PointerEvent)"
           @contextmenu.prevent
         >
           <img

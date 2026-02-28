@@ -5,6 +5,7 @@ interface Props {
   label: string
   options: Array<string | number>
   selected: Array<string | number>
+  compact: boolean
 }
 
 const props = defineProps<Props>()
@@ -50,8 +51,8 @@ onBeforeUnmount(() => {
     <button
       :style="{
         fontSize: '0.95rem',
-        padding: '0.45rem 0.9rem',
-        minHeight: '2.25rem',
+        padding: compact ? '0.55rem 0.95rem' : '0.45rem 0.9rem',
+        minHeight: compact ? '2.6rem' : '2.25rem',
         lineHeight: '1.2',
         borderRadius: '6px',
         border: `1px solid ${active ? 'var(--accent-base)' : 'var(--border-color)'}`,
@@ -76,7 +77,7 @@ onBeforeUnmount(() => {
         border: '1px solid var(--border-color)',
         borderRadius: '8px',
         padding: '0.4rem 0',
-        minWidth: '100px',
+        minWidth: compact ? '120px' : '100px',
         boxShadow: '0 8px 20px rgba(0,0,0,0.5)',
       }"
     >
@@ -87,7 +88,7 @@ onBeforeUnmount(() => {
           display: 'flex',
           alignItems: 'center',
           gap: '0.65rem',
-          padding: '0.52rem 0.85rem',
+          padding: compact ? '0.62rem 0.85rem' : '0.52rem 0.85rem',
           cursor: 'pointer',
           color: 'var(--text-primary)',
           fontSize: '1.05rem',
@@ -97,7 +98,7 @@ onBeforeUnmount(() => {
         <input
           type="checkbox"
           :checked="selected.includes(option)"
-          :style="{ accentColor: 'var(--accent-base)', width: '1.1rem', height: '1.1rem' }"
+          :style="{ accentColor: 'var(--accent-base)', width: compact ? '1.25rem' : '1.1rem', height: compact ? '1.25rem' : '1.1rem' }"
           @change="toggle(option)"
         />
         {{ String(option) }}

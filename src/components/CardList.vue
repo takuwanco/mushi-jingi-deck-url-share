@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed, ref, type CSSProperties } from 'vue'
+import { computed, onBeforeUnmount, ref, type CSSProperties } from 'vue'
 import MultiSelect from './MultiSelect.vue'
 import { type CardMeta, normalizedCards } from '../utils/cardMeta'
 
 interface Props {
   isExpanded: boolean
+  compact: boolean
 }
 
 const props = defineProps<Props>()
@@ -27,11 +28,17 @@ const PREVIEW_OFFSET = 16
 const PREVIEW_MARGIN = 12
 const PREVIEW_ASPECT_RATIO = 88 / 63
 const PREVIEW_HEIGHT = PREVIEW_WIDTH * PREVIEW_ASPECT_RATIO
+const LONG_PRESS_MS = 380
+const MOVE_CANCEL_PX = 12
 const BASE_URL = import.meta.env.BASE_URL
 
 const cards = ref<CardMeta[]>(normalizedCards)
 const hoveredCard = ref<string | null>(null)
 const mousePos = ref<{ x: number; y: number } | null>(null)
+const longPressTimer = ref<number | null>(null)
+const longPressTriggered = ref(false)
+const pointerStart = ref<{ x: number; y: number } | null>(null)
+const suppressTap = ref(false)
 const filters = ref<Filters>({
   colors: [],
   types: [],
@@ -134,6 +141,83 @@ const hidePreview = () => {
   hoveredCard.value = null
   mousePos.value = null
 }
+
+const clearLongPressTimer = () => {
+  if (longPressTimer.value !== null) {
+    window.clearTimeout(longPressTimer.value)
+    longPressTimer.value = null
+  }
+}
+
+const startLongPressPreview = (cardId: string, event: PointerEvent) => {
+  if (!props.compact || event.pointerType === 'mouse') {
+    showPreview(cardId, event)
+    return
+  }
+
+  suppressTap.value = false
+  longPressTriggered.value = false
+  pointerStart.value = { x: event.clientX, y: event.clientY }
+  clearLongPressTimer()
+  longPressTimer.value = window.setTimeout(() => {
+    longPressTriggered.value = true
+    hoveredCard.value = cardId
+    mousePos.value = { x: event.clientX, y: event.clientY }
+  }, LONG_PRESS_MS)
+}
+
+const updateLongPressPreview = (event: PointerEvent) => {
+  if (!props.compact || event.pointerType === 'mouse') {
+    movePreview(event)
+    return
+  }
+
+  if (!pointerStart.value) return
+
+  const movedX = Math.abs(event.clientX - pointerStart.value.x)
+  const movedY = Math.abs(event.clientY - pointerStart.value.y)
+  if (movedX > MOVE_CANCEL_PX || movedY > MOVE_CANCEL_PX) {
+    clearLongPressTimer()
+    if (longPressTriggered.value) {
+      suppressTap.value = true
+      hidePreview()
+      longPressTriggered.value = false
+    }
+    pointerStart.value = null
+    return
+  }
+
+  if (longPressTriggered.value) {
+    movePreview(event)
+  }
+}
+
+const endLongPressPreview = (event: PointerEvent) => {
+  if (!props.compact || event.pointerType === 'mouse') {
+    hidePreview()
+    return
+  }
+
+  clearLongPressTimer()
+  if (longPressTriggered.value) {
+    suppressTap.value = true
+  }
+  longPressTriggered.value = false
+  pointerStart.value = null
+  hidePreview()
+}
+
+const handleCardClick = (cardId: string) => {
+  if (props.compact && suppressTap.value) {
+    suppressTap.value = false
+    return
+  }
+  emit('add', cardId)
+}
+
+onBeforeUnmount(() => {
+  clearLongPressTimer()
+})
 </script>
 
 <template>
@@ -144,7 +228,7 @@ const hidePreview = () => {
       minHeight: isExpanded ? 0 : 'auto',
       marginTop: '4px',
       transition: 'flex 0.3s ease',
-      padding: '0.7rem 1.2rem',
+      padding: compact ? '0.6rem 0.8rem' : '0.7rem 1.2rem',
       display: 'flex',
       flexDirection: 'column',
       overflow: 'hidden',
@@ -169,51 +253,56 @@ const hidePreview = () => {
         :style="{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginRight: '0.25rem' }"
       >
         <span :style="{ transform: `rotate(${isExpanded ? 0 : -90}deg)`, transition: 'transform 0.2s', fontSize: '1.1rem' }">▼</span>
-        <h2 :style="{ margin: 0, fontSize: '1.5rem', fontWeight: 700 }">カード・ライブラリ</h2>
+        <h2 :style="{ margin: 0, fontSize: compact ? '1.2rem' : '1.5rem', fontWeight: 700 }">カード・ライブラリ</h2>
         <span :style="{ fontSize: '0.85rem', color: 'var(--text-secondary)' }">({{ filteredCards.length }})</span>
       </div>
 
       <div
         v-if="isExpanded"
-        :style="{ marginLeft: 'auto', display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }"
+        :style="{ marginLeft: compact ? 0 : 'auto', display: 'flex', gap: compact ? '0.4rem' : '0.5rem', alignItems: 'center', flexWrap: 'wrap' }"
         @click.stop
       >
         <MultiSelect
           label="セット"
           :options="['01', '02', '03', '04', '05', '06', '07']"
           :selected="filters.sets"
+          :compact="compact"
           @change="value => setFilter('sets', value)"
         />
         <MultiSelect
           label="色"
           :options="['赤', '青', '緑', '無']"
           :selected="filters.colors"
+          :compact="compact"
           @change="value => setFilter('colors', value)"
         />
         <MultiSelect
           label="種類"
           :options="['虫', '術', '強化']"
           :selected="filters.types"
+          :compact="compact"
           @change="value => setFilter('types', value)"
         />
         <MultiSelect
           label="レア"
           :options="['UR', 'LR', 'SR', 'R', 'N']"
           :selected="filters.rarelities"
+          :compact="compact"
           @change="value => setFilter('rarelities', value)"
         />
         <MultiSelect
           label="コスト"
           :options="[0, 1, 2, 3, 4, 5, 6]"
           :selected="filters.costs"
+          :compact="compact"
           @change="value => setFilter('costs', value)"
         />
         <button
           :disabled="activeFilterCount === 0"
           :style="{
             fontSize: '0.95rem',
-            padding: '0.45rem 0.9rem',
-            minHeight: '2.25rem',
+            padding: compact ? '0.55rem 0.95rem' : '0.45rem 0.9rem',
+            minHeight: compact ? '2.6rem' : '2.25rem',
             lineHeight: '1.2',
             backgroundColor: 'var(--bg-dark)',
             border: '1px solid var(--border-color)',
@@ -240,10 +329,12 @@ const hidePreview = () => {
       <div
         :style="{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(105px, 1fr))',
+          gridTemplateColumns: compact
+            ? 'repeat(auto-fill, minmax(84px, 1fr))'
+            : 'repeat(auto-fill, minmax(105px, 1fr))',
           gridAutoRows: 'auto',
-          gap: '1rem',
-          padding: '0.5rem',
+          gap: compact ? '0.6rem' : '1rem',
+          padding: compact ? '0.25rem' : '0.5rem',
         }"
       >
         <div
@@ -257,12 +348,12 @@ const hidePreview = () => {
             border: '1px solid transparent',
             backgroundColor: 'var(--bg-primary)',
           }"
-          @click="emit('add', card.id)"
-          @pointerdown="event => showPreview(card.id, event as PointerEvent)"
-          @pointermove="event => movePreview(event as PointerEvent)"
-          @pointerup="hidePreview"
-          @pointercancel="hidePreview"
-          @pointerleave="hidePreview"
+          @click="handleCardClick(card.id)"
+          @pointerdown="event => startLongPressPreview(card.id, event as PointerEvent)"
+          @pointermove="event => updateLongPressPreview(event as PointerEvent)"
+          @pointerup="event => endLongPressPreview(event as PointerEvent)"
+          @pointercancel="event => endLongPressPreview(event as PointerEvent)"
+          @pointerleave="event => endLongPressPreview(event as PointerEvent)"
           @contextmenu.prevent
         >
           <img

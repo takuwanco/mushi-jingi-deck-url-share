@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import CardList from './components/CardList.vue'
 import DeckArea from './components/DeckArea.vue'
 import { useDeck } from './composables/useDeck'
@@ -7,6 +7,20 @@ import { useDeck } from './composables/useDeck'
 const { deck, addCard, removeCard, clearDeck } = useDeck()
 const isDeckExpanded = ref(true)
 const isLibraryExpanded = ref(true)
+const isCompact = ref(false)
+
+const updateCompactLayout = () => {
+  isCompact.value = window.innerWidth < 768
+}
+
+onMounted(() => {
+  updateCompactLayout()
+  window.addEventListener('resize', updateCompactLayout)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateCompactLayout)
+})
 
 const toggleDeck = () => {
   if (isDeckExpanded.value && !isLibraryExpanded.value) {
@@ -26,7 +40,8 @@ const toggleLibrary = () => {
 <template>
   <div
     :style="{
-      height: '100vh',
+      minHeight: '100vh',
+      height: '100dvh',
       width: '100%',
       display: 'flex',
       flexDirection: 'column',
@@ -41,19 +56,19 @@ const toggleLibrary = () => {
         flex: 1,
         minHeight: 0,
         overflow: 'hidden',
-        height: '100%',
+        height: isCompact ? 'auto' : '100%',
         maxHeight: '100%',
         maxWidth: '1600px',
         width: '100%',
         margin: '0 auto',
-        padding: '0.5rem',
+        padding: isCompact ? '0.4rem' : '0.5rem',
       }"
     >
       <div
         :style="{
           flex: isDeckExpanded ? '0 1 auto' : '0 0 auto',
-          maxHeight: isDeckExpanded ? '60vh' : 'auto',
-          minHeight: isDeckExpanded ? '360px' : 'auto',
+          maxHeight: isDeckExpanded ? (isCompact ? '50vh' : '60vh') : 'auto',
+          minHeight: isDeckExpanded ? (isCompact ? '220px' : '360px') : 'auto',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
@@ -62,6 +77,7 @@ const toggleLibrary = () => {
         <DeckArea
           :deck="deck"
           :is-expanded="isDeckExpanded"
+          :compact="isCompact"
           @remove="removeCard"
           @clear="clearDeck"
           @toggle="toggleDeck"
@@ -77,7 +93,7 @@ const toggleLibrary = () => {
           flexDirection: 'column',
         }"
       >
-        <CardList :is-expanded="isLibraryExpanded" @add="addCard" @toggle="toggleLibrary" />
+        <CardList :is-expanded="isLibraryExpanded" :compact="isCompact" @add="addCard" @toggle="toggleLibrary" />
       </div>
     </div>
   </div>
