@@ -285,7 +285,7 @@ onBeforeUnmount(() => {
         />
         <MultiSelect
           label="レア"
-          :options="['UR', 'LR', 'SR', 'R', 'N']"
+          :options="['LR', 'UR', 'SR', 'R', 'N']"
           :selected="filters.rarelities"
           :compact="compact"
           @change="value => setFilter('rarelities', value)"
