@@ -362,6 +362,8 @@ onBeforeUnmount(() => {
             :title="`${card.name} [${card.color}/${card.types.join('・')}/${card.rarelity}/コスト${card.cost}]`"
             :style="{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', userSelect: 'none' }"
             draggable="false"
+            @dragstart.prevent
+            @contextmenu.prevent
             @error="event => onCardImageError(event, card.id)"
           />
         </div>
@@ -375,6 +377,8 @@ onBeforeUnmount(() => {
         :src="getImageUrl('lc', hoveredCard)"
         :alt="hoveredCard"
         draggable="false"
+        @dragstart.prevent
+        @contextmenu.prevent
         :style="getPreviewStyle()"
       />
     </Teleport>

@@ -379,6 +379,8 @@ onBeforeUnmount(() => {
               userSelect: 'none',
               display: 'block',
             }"
+            @dragstart.prevent
+            @contextmenu.prevent
           />
           <span v-else>{{ index + 1 }}</span>
         </div>
@@ -428,6 +430,8 @@ onBeforeUnmount(() => {
         :src="getImageUrl('lc', hoveredCardId)"
         :alt="hoveredCardId"
         draggable="false"
+        @dragstart.prevent
+        @contextmenu.prevent
         :style="getPreviewStyle()"
       />
     </Teleport>

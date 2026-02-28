@@ -55,8 +55,15 @@ button:hover {
   z-index: 100;
 }
 
+.card-item {
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
 .no-drag-image {
   -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   user-select: none;
   filter: brightness(var(--card-image-brightness)) saturate(var(--card-image-saturation));
 }
