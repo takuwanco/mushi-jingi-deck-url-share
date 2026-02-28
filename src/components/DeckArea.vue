@@ -365,13 +365,16 @@ onBeforeUnmount(() => {
         >
           <img
             v-if="cardId"
+            class="no-drag-image"
             :src="getImageUrl('sc', cardId)"
             :alt="cardId"
+            draggable="false"
             :style="{
               width: '100%',
               height: '100%',
               objectFit: 'cover',
               borderRadius: '3px',
+              userSelect: 'none',
               display: 'block',
             }"
           />
@@ -418,8 +421,10 @@ onBeforeUnmount(() => {
 
       <img
         v-if="hoveredCardId && mousePos"
+        class="no-drag-image"
         :src="getImageUrl('lc', hoveredCardId)"
         :alt="hoveredCardId"
+        draggable="false"
         :style="getPreviewStyle()"
       />
     </Teleport>

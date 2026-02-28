@@ -53,6 +53,11 @@ button:hover {
   z-index: 100;
 }
 
+.no-drag-image {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 .glass-panel {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);

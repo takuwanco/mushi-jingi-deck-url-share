@@ -329,9 +329,7 @@ onBeforeUnmount(() => {
       <div
         :style="{
           display: 'grid',
-          gridTemplateColumns: compact
-            ? 'repeat(auto-fill, minmax(84px, 1fr))'
-            : 'repeat(auto-fill, minmax(105px, 1fr))',
+          gridTemplateColumns: compact ? 'repeat(5, minmax(0, 1fr))' : 'repeat(auto-fill, minmax(105px, 1fr))',
           gridAutoRows: 'auto',
           gap: compact ? '0.6rem' : '1rem',
           padding: compact ? '0.25rem' : '0.5rem',
@@ -357,10 +355,12 @@ onBeforeUnmount(() => {
           @contextmenu.prevent
         >
           <img
+            class="no-drag-image"
             :src="getImageUrl('sc', card.id)"
             :alt="card.name"
             :title="`${card.name} [${card.color}/${card.types.join('・')}/${card.rarelity}/コスト${card.cost}]`"
-            :style="{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }"
+            :style="{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', userSelect: 'none' }"
+            draggable="false"
             @error="event => onCardImageError(event, card.id)"
           />
         </div>
@@ -370,8 +370,10 @@ onBeforeUnmount(() => {
     <Teleport to="body">
       <img
         v-if="hoveredCard && mousePos"
+        class="no-drag-image"
         :src="getImageUrl('lc', hoveredCard)"
         :alt="hoveredCard"
+        draggable="false"
         :style="getPreviewStyle()"
       />
     </Teleport>
