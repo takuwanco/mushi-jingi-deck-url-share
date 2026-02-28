@@ -8,6 +8,8 @@
   --border-color: #334155;
   --glass-bg: rgba(30, 41, 59, 0.7);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --card-image-brightness: 1.10;
+  --card-image-saturation: 1.10;
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -56,6 +58,7 @@ button:hover {
 .no-drag-image {
   -webkit-user-drag: none;
   user-select: none;
+  filter: brightness(var(--card-image-brightness)) saturate(var(--card-image-saturation));
 }
 
 .glass-panel {
