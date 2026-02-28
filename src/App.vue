@@ -4,7 +4,7 @@ import CardList from './components/CardList.vue'
 import DeckArea from './components/DeckArea.vue'
 import { useDeck } from './composables/useDeck'
 
-const { deck, addCard, removeCard, clearDeck } = useDeck()
+const { deck, addCard, removeCard, clearDeck, limitAlertMessage } = useDeck()
 const isDeckExpanded = ref(true)
 const isLibraryExpanded = ref(true)
 const isCompact = ref(false)
@@ -48,6 +48,10 @@ const toggleLibrary = () => {
       overflow: 'hidden',
     }"
   >
+    <Transition name="limit-alert-transition">
+      <div v-if="limitAlertMessage" class="limit-alert">{{ limitAlertMessage }}</div>
+    </Transition>
+
     <div
       :style="{
         display: 'flex',

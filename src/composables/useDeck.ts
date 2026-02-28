@@ -1,7 +1,8 @@
-import { onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { cardMetaById, compareCardsForDeck } from '../utils/cardMeta'
 
 const MAX_CARDS = 20
+const LIMIT_ALERT_DURATION_MS = 2200
 
 const getParamKey = (index: number) => `c${String(index + 1).padStart(2, '0')}`
 
@@ -42,6 +43,21 @@ const updateUrl = (newDeck: string[]) => {
 
 export const useDeck = () => {
   const deck = ref<string[]>(Array(MAX_CARDS).fill(''))
+  const limitAlertMessage = ref('')
+  let limitAlertTimer: ReturnType<typeof setTimeout> | null = null
+
+  const showLimitAlert = () => {
+    limitAlertMessage.value = 'デッキ上限です。デッキのカードを減らしてください。'
+
+    if (limitAlertTimer) {
+      clearTimeout(limitAlertTimer)
+    }
+
+    limitAlertTimer = setTimeout(() => {
+      limitAlertMessage.value = ''
+      limitAlertTimer = null
+    }, LIMIT_ALERT_DURATION_MS)
+  }
 
   onMounted(() => {
     const params = new URLSearchParams(window.location.search)
@@ -62,10 +78,17 @@ export const useDeck = () => {
     }
   })
 
+  onBeforeUnmount(() => {
+    if (limitAlertTimer) {
+      clearTimeout(limitAlertTimer)
+      limitAlertTimer = null
+    }
+  })
+
   const addCard = (cardId: string) => {
     const currentCards = deck.value.filter(c => c !== '')
     if (currentCards.length >= MAX_CARDS) {
-      window.alert('デッキがいっぱいです。カードを削除してから追加してください。')
+      showLimitAlert()
       return
     }
 
@@ -90,5 +113,5 @@ export const useDeck = () => {
     updateUrl(newDeck)
   }
 
-  return { deck, addCard, removeCard, clearDeck }
+  return { deck, addCard, removeCard, clearDeck, limitAlertMessage }
 }
