@@ -66,20 +66,24 @@ const toggleLibrary = () => {
     >
       <div
         :style="{
-          flex: isDeckExpanded ? (!isLibraryExpanded ? '1 1 auto' : '0 1 auto') : '0 0 auto',
+          flex: isDeckExpanded ? '0 1 auto' : '0 0 auto',
           maxHeight: isDeckExpanded
             ? isLibraryExpanded
               ? isCompact
                 ? '50vh'
                 : '60vh'
-              : '100%'
+              : isCompact
+                ? '68vh'
+                : '78vh'
             : 'auto',
           minHeight: isDeckExpanded
             ? isLibraryExpanded
               ? isCompact
                 ? '220px'
                 : '360px'
-              : 0
+              : isCompact
+                ? '220px'
+                : '360px'
             : 'auto',
           overflow: 'hidden',
           display: 'flex',
