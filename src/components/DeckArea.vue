@@ -250,7 +250,7 @@ onBeforeUnmount(() => {
         <div :style="{ display: 'flex', alignItems: 'center', gap: '0.5rem' }">
           <span :style="{ transform: `rotate(${isExpanded ? 0 : -90}deg)`, transition: 'transform 0.2s', fontSize: '1.1rem' }">▼</span>
           <span :style="{ fontSize: compact ? '1.2rem' : '1.5rem', fontWeight: 700 }">デッキ</span>
-          <span :style="{ fontSize: '0.85rem', color: 'var(--text-secondary)' }">({{ filledCount }})</span>
+          <span :style="{ fontSize: '0.95rem', color: 'var(--text-secondary)' }">({{ filledCount }})</span>
         </div>
         <div
           :style="{ display: 'flex', alignItems: 'center', gap: compact ? '0.45rem' : '0.75rem', flexWrap: 'wrap', marginLeft: compact ? 0 : 'auto' }"

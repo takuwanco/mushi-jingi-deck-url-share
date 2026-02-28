@@ -254,7 +254,7 @@ onBeforeUnmount(() => {
       >
         <span :style="{ transform: `rotate(${isExpanded ? 0 : -90}deg)`, transition: 'transform 0.2s', fontSize: '1.1rem' }">▼</span>
         <h2 :style="{ margin: 0, fontSize: compact ? '1.2rem' : '1.5rem', fontWeight: 700 }">カード・ライブラリ</h2>
-        <span :style="{ fontSize: '0.85rem', color: 'var(--text-secondary)' }">({{ filteredCards.length }})</span>
+        <span :style="{ fontSize: '0.95rem', color: 'var(--text-secondary)' }">({{ filteredCards.length }})</span>
       </div>
 
       <div
