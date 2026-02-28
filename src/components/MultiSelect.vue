@@ -150,6 +150,7 @@ onBeforeUnmount(() => {
       <div
         v-if="open"
         ref="dropdownRef"
+        class="fancy-scroll"
         :style="dropdownStyle"
       >
         <label

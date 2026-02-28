@@ -323,6 +323,7 @@ onBeforeUnmount(() => {
 
     <div
       v-if="isExpanded"
+      class="fancy-scroll"
       :style="{
         flex: 1,
         overflowY: 'auto',
