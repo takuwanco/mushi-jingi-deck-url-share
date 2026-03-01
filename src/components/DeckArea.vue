@@ -408,6 +408,7 @@ onBeforeUnmount(() => {
         <ul :style="{ margin: 0, paddingLeft: '1.1rem', display: 'grid', gap: '0.35rem', fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '0.75rem' }">
           <li>私物のスキャン画像を使用しています。画質が悪かったり、古いテキストだったり、プロモ版だったりしますが、気にしないでください。</li>
           <li>公式に怒られたら閉鎖します。</li>
+          <li>第7弾まで対応しています。</li>
         </ul>
 
         <div :style="{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.45rem' }">3. 連絡先</div>
