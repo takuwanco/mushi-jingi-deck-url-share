@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://takuwanco.github.io/mushi-jingi-deck-url-share/sitemap.xml
