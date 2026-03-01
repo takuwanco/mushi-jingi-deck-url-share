@@ -399,8 +399,9 @@ onBeforeUnmount(() => {
         <ul :style="{ margin: 0, paddingLeft: '1.1rem', display: 'grid', gap: '0.35rem', fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '0.75rem' }">
           <li>蟲神器のデッキをURLで共有できます。ブックマークも可能です。</li>
           <li>各パネルは折り畳めます。</li>
-          <li>PCからであれば、右クリックでカードを追加せず拡大表示できます。</li>
-          <li>開発者の環境に合わせた表示になっており、環境次第でレイアウトが崩れる可能性があります。PCのChromeと、iPhoneで確認しています。</li>
+          <li>PCの場合、右クリックでカードを増減せずに拡大表示できます。</li>
+          <li>モバイルの場合、長押しでカードを拡大表示できます。</li>
+          <li>開発者が個人的に使いやすいレイアウトに調整しており、使用環境次第でレイアウトが崩れる可能性があります。PCのChromeと、iPhoneのSafariで確認しています。</li>
         </ul>
 
         <div :style="{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.45rem' }">2. 表示画像について</div>

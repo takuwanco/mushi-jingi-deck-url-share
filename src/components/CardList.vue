@@ -271,7 +271,7 @@ onBeforeUnmount(() => {
         />
         <MultiSelect
           label="色"
-          :options="['赤', '青', '緑', '無']"
+          :options="['赤', '青', '緑', '無', '-']"
           :selected="filters.colors"
           :compact="compact"
           @change="value => setFilter('colors', value)"

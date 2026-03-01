@@ -896,7 +896,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -905,7 +905,7 @@
     "rarelity": "R",
     "cost": 2,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -914,7 +914,7 @@
     "rarelity": "SR",
     "cost": 2,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -923,7 +923,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -932,7 +932,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -941,7 +941,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -950,7 +950,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -959,7 +959,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -968,7 +968,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -977,7 +977,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -986,7 +986,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -995,7 +995,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -1004,7 +1004,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -1013,7 +1013,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -1022,7 +1022,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -1031,7 +1031,7 @@
     "rarelity": "LR",
     "cost": 3,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1040,7 +1040,7 @@
     "rarelity": "LR",
     "cost": 4,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1049,7 +1049,7 @@
     "rarelity": "SR",
     "cost": 3,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1058,7 +1058,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1067,7 +1067,7 @@
     "rarelity": "R",
     "cost": 2,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1076,7 +1076,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1085,7 +1085,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1094,7 +1094,7 @@
     "rarelity": "SR",
     "cost": 1,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1103,7 +1103,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1112,7 +1112,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1121,7 +1121,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1130,7 +1130,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1139,7 +1139,7 @@
     "rarelity": "N",
     "cost": 1,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1148,7 +1148,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1157,7 +1157,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1166,7 +1166,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "01",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1580,7 +1580,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "02",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -1589,7 +1589,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "02",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -1598,7 +1598,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "02",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -1607,7 +1607,7 @@
     "rarelity": "LR",
     "cost": 2,
     "set": "02",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -1616,7 +1616,7 @@
     "rarelity": "SR",
     "cost": 4,
     "set": "02",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -1625,7 +1625,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "02",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1634,7 +1634,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "02",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1643,7 +1643,7 @@
     "rarelity": "R",
     "cost": 2,
     "set": "02",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1652,7 +1652,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "02",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -1661,7 +1661,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "02",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2075,7 +2075,7 @@
     "rarelity": "SR",
     "cost": 3,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2084,7 +2084,7 @@
     "rarelity": "N",
     "cost": 1,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2093,7 +2093,7 @@
     "rarelity": "LR",
     "cost": 6,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2102,7 +2102,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2111,7 +2111,7 @@
     "rarelity": "R",
     "cost": 3,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2120,7 +2120,7 @@
     "rarelity": "R",
     "cost": 4,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2129,7 +2129,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2138,7 +2138,7 @@
     "rarelity": "R",
     "cost": 2,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2147,7 +2147,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2156,7 +2156,7 @@
     "rarelity": "SR",
     "cost": 2,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2165,7 +2165,7 @@
     "rarelity": "R",
     "cost": 3,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2174,7 +2174,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2183,7 +2183,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2192,7 +2192,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2201,7 +2201,7 @@
     "rarelity": "R",
     "cost": 3,
     "set": "03",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2615,7 +2615,7 @@
     "rarelity": "N",
     "cost": 1,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2624,7 +2624,7 @@
     "rarelity": "N",
     "cost": 2,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2633,7 +2633,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2642,7 +2642,7 @@
     "rarelity": "R",
     "cost": 2,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2651,7 +2651,7 @@
     "rarelity": "SR",
     "cost": 3,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2660,7 +2660,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2669,7 +2669,7 @@
     "rarelity": "SR",
     "cost": 3,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2678,7 +2678,7 @@
     "rarelity": "SR",
     "cost": 0,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2687,7 +2687,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -2696,7 +2696,7 @@
     "rarelity": "N",
     "cost": 1,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2705,7 +2705,7 @@
     "rarelity": "R",
     "cost": 3,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2714,7 +2714,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2723,7 +2723,7 @@
     "rarelity": "SR",
     "cost": 5,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2732,7 +2732,7 @@
     "rarelity": "N",
     "cost": 3,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2741,7 +2741,7 @@
     "rarelity": "R",
     "cost": 3,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2750,7 +2750,7 @@
     "rarelity": "N",
     "cost": 1,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2759,7 +2759,7 @@
     "rarelity": "LR",
     "cost": 2,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2768,7 +2768,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -2777,7 +2777,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "04",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3191,7 +3191,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3200,7 +3200,7 @@
     "rarelity": "N",
     "cost": 1,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3209,7 +3209,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3218,7 +3218,7 @@
     "rarelity": "SR",
     "cost": 2,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3227,7 +3227,7 @@
     "rarelity": "SR",
     "cost": 1,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3236,7 +3236,7 @@
     "rarelity": "SR",
     "cost": 1,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3245,7 +3245,7 @@
     "rarelity": "SR",
     "cost": 1,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3254,7 +3254,7 @@
     "rarelity": "R",
     "cost": 2,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3263,7 +3263,7 @@
     "rarelity": "SR",
     "cost": 5,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3272,7 +3272,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3281,7 +3281,7 @@
     "rarelity": "SR",
     "cost": 0,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3290,7 +3290,7 @@
     "rarelity": "R",
     "cost": 4,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3299,7 +3299,7 @@
     "rarelity": "N",
     "cost": 1,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3308,7 +3308,7 @@
     "rarelity": "R",
     "cost": 2,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3317,7 +3317,7 @@
     "rarelity": "N",
     "cost": 2,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3326,7 +3326,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3335,7 +3335,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3344,7 +3344,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3353,7 +3353,7 @@
     "rarelity": "LR",
     "cost": 0,
     "set": "05",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3794,7 +3794,7 @@
     "rarelity": "SR",
     "cost": 4,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3803,7 +3803,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3812,7 +3812,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3821,7 +3821,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3830,7 +3830,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3839,7 +3839,7 @@
     "rarelity": "N",
     "cost": 0,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3848,7 +3848,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -3857,7 +3857,7 @@
     "rarelity": "LR",
     "cost": 0,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3866,7 +3866,7 @@
     "rarelity": "N",
     "cost": 2,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3875,7 +3875,7 @@
     "rarelity": "R",
     "cost": 1,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3884,7 +3884,7 @@
     "rarelity": "N",
     "cost": 1,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3893,7 +3893,7 @@
     "rarelity": "R",
     "cost": 6,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3902,7 +3902,7 @@
     "rarelity": "R",
     "cost": 3,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3911,7 +3911,7 @@
     "rarelity": "N",
     "cost": 2,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3920,7 +3920,7 @@
     "rarelity": "SR",
     "cost": 3,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -3929,7 +3929,7 @@
     "rarelity": "SR",
     "cost": 4,
     "set": "06",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -4079,7 +4079,7 @@
   {
     "id": "07-017",
     "name": "マルスゾウカブト",
-    "rarelity": "UR",
+    "rarelity": "R",
     "cost": 5,
     "set": "07",
     "color": "青",
@@ -4142,7 +4142,7 @@
   {
     "id": "07-024",
     "name": "ベニモンアゲハ",
-    "rarelity": "R",
+    "rarelity": "N",
     "cost": 3,
     "set": "07",
     "color": "青",
@@ -4151,7 +4151,7 @@
   {
     "id": "07-025",
     "name": "メルポメネドクチョウ",
-    "rarelity": "R",
+    "rarelity": "N",
     "cost": 2,
     "set": "07",
     "color": "青",
@@ -4187,7 +4187,7 @@
   {
     "id": "07-029",
     "name": "コムラサキ",
-    "rarelity": "R",
+    "rarelity": "N",
     "cost": 3,
     "set": "07",
     "color": "青",
@@ -4268,7 +4268,7 @@
   {
     "id": "07-038",
     "name": "ヒゲナガカミキリ",
-    "rarelity": "R",
+    "rarelity": "N",
     "cost": 4,
     "set": "07",
     "color": "緑",
@@ -4304,7 +4304,7 @@
   {
     "id": "07-042",
     "name": "クビキリギス",
-    "rarelity": "R",
+    "rarelity": "N",
     "cost": 3,
     "set": "07",
     "color": "緑",
@@ -4322,7 +4322,7 @@
   {
     "id": "07-044",
     "name": "ツマグロヒョウモン（幼虫）",
-    "rarelity": "R",
+    "rarelity": "N",
     "cost": 3,
     "set": "07",
     "color": "緑",
@@ -4388,7 +4388,7 @@
     "rarelity": "LR",
     "cost": 5,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -4397,16 +4397,16 @@
     "rarelity": "R",
     "cost": 1,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
     "id": "07-053",
     "name": "吉兆虫の一本刀",
-    "rarelity": "R",
+    "rarelity": "N",
     "cost": 0,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -4415,7 +4415,7 @@
     "rarelity": "SR",
     "cost": 3,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -4424,7 +4424,7 @@
     "rarelity": "R",
     "cost": 2,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -4433,7 +4433,7 @@
     "rarelity": "SR",
     "cost": 3,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "強化"
   },
   {
@@ -4442,7 +4442,7 @@
     "rarelity": "R",
     "cost": 0,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -4451,25 +4451,25 @@
     "rarelity": "SR",
     "cost": 1,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
     "id": "07-059",
     "name": "蟲装の演舞",
-    "rarelity": "R",
+    "rarelity": "N",
     "cost": 1,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
     "id": "07-060",
     "name": "蟲術の演舞",
-    "rarelity": "R",
+    "rarelity": "N",
     "cost": 2,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -4478,16 +4478,16 @@
     "rarelity": "R",
     "cost": 1,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
     "id": "07-062",
     "name": "宝石虫の置き土産",
-    "rarelity": "R",
+    "rarelity": "N",
     "cost": 1,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -4496,7 +4496,7 @@
     "rarelity": "SR",
     "cost": 6,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "術"
   },
   {
@@ -4505,7 +4505,8 @@
     "rarelity": "LR",
     "cost": 3,
     "set": "07",
-    "color": "無",
+    "color": "-",
     "type": "術"
   }
 ]
+
