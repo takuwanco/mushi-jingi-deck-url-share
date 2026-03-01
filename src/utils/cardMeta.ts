@@ -20,7 +20,7 @@ type LegacyCardMeta = Omit<CardMeta, 'types'> & {
 const TYPE_PRIORITY: Record<CardType, number> = {
   虫: 0,
   術: 1,
-  強化: 1,
+  強化: 2,
 }
 
 const COLOR_PRIORITY: Record<string, number> = {
@@ -28,11 +28,12 @@ const COLOR_PRIORITY: Record<string, number> = {
   青: 1,
   緑: 2,
   無: 3,
+  '-': 9,
 }
 
 const RARELITY_PRIORITY: Record<string, number> = {
-  UR: 0,
-  LR: 1,
+  LR: 0,
+  UR: 1,
   SR: 2,
   R: 3,
   N: 4,
