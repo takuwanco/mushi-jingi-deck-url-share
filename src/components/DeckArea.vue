@@ -397,9 +397,9 @@ onBeforeUnmount(() => {
       >
         <div :style="{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.45rem' }">1. このサイトについて</div>
         <ul :style="{ margin: 0, paddingLeft: '1.1rem', display: 'grid', gap: '0.35rem', fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '0.75rem' }">
-          <li>蟲神器のデッキをURLで共有できます。URLのブックマークも可能です。</li>
+          <li>蟲神器のデッキをURLとして共有できます。デッキ情報はURLに埋め込まれるので、ブックマークも可能です。</li>
           <li>各パネルは折り畳めます。</li>
-          <li>PCの場合、右クリックでカードを増減せずに拡大表示できます。</li>
+          <li>PCの場合、右クリックでデッキを増減させずに拡大表示できます。</li>
           <li>モバイルの場合、長押しでカードを拡大表示できます。</li>
           <li>使用環境次第でレイアウトが崩れる可能性があります。</li>
         </ul>
