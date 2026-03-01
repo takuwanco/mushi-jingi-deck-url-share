@@ -3,8 +3,23 @@ import { cardMetaById, compareCardsForDeck } from '../utils/cardMeta'
 
 const MAX_CARDS = 20
 const LIMIT_ALERT_DURATION_MS = 2200
+const CXX_PARAM_PATTERN = /^c\d+$/i
 
 const getParamKey = (index: number) => `c${String(index + 1).padStart(2, '0')}`
+const VALID_PARAM_KEYS = new Set(Array.from({ length: MAX_CARDS }, (_, index) => getParamKey(index)))
+
+const removeOutOfRangeDeckParams = (params: URLSearchParams) => {
+  let changed = false
+
+  for (const key of new Set(params.keys())) {
+    if (!CXX_PARAM_PATTERN.test(key)) continue
+    if (VALID_PARAM_KEYS.has(key)) continue
+    params.delete(key)
+    changed = true
+  }
+
+  return changed
+}
 
 const sortAndPad = (cards: string[]) => {
   const sorted = [...cards].sort((idA, idB) => {
@@ -26,6 +41,7 @@ const sortAndPad = (cards: string[]) => {
 
 const updateUrl = (newDeck: string[]) => {
   const params = new URLSearchParams(window.location.search)
+  removeOutOfRangeDeckParams(params)
 
   newDeck.forEach((cardId, index) => {
     const key = getParamKey(index)
@@ -61,20 +77,30 @@ export const useDeck = () => {
 
   onMounted(() => {
     const params = new URLSearchParams(window.location.search)
+    let paramsChanged = removeOutOfRangeDeckParams(params)
     const initialDeck = Array(MAX_CARDS).fill('')
     let hasParams = false
 
     for (let i = 0; i < MAX_CARDS; i++) {
       const key = getParamKey(i)
       const value = params.get(key)
-      if (value) {
+      if (value && cardMetaById.has(value)) {
         initialDeck[i] = value
         hasParams = true
+      } else if (value) {
+        params.delete(key)
+        paramsChanged = true
       }
     }
 
     if (hasParams) {
       deck.value = initialDeck
+    }
+
+    if (paramsChanged) {
+      const newSearch = params.toString()
+      const newUrl = newSearch ? `${window.location.pathname}?${newSearch}` : window.location.pathname
+      window.history.replaceState({}, '', newUrl)
     }
   })
 

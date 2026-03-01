@@ -359,6 +359,7 @@ onBeforeUnmount(() => {
             class="no-drag-image"
             :src="getImageUrl('sc', card.id)"
             :alt="card.name"
+            loading="lazy"
             :title="`${card.name} [${card.color}/${card.types.join('・')}/${card.rarelity}/コスト${card.cost}]`"
             :style="{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', userSelect: 'none' }"
             draggable="false"

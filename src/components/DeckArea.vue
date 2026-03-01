@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, type CSSProperties } from 'vue'
+import { cardMetaById } from '../utils/cardMeta'
 
 interface Props {
   deck: string[]
@@ -79,6 +80,7 @@ const getPreviewStyle = (): CSSProperties => {
 }
 
 const getImageUrl = (size: 'sc' | 'lc', cardId: string) => `${BASE_URL}img/${size}/${cardId}.jpg`
+const getCardAlt = (cardId: string) => cardMetaById.get(cardId)?.name ?? cardId
 
 const showPreview = (index: number, event: PointerEvent) => {
   hoveredIndex.value = index
@@ -369,7 +371,8 @@ onBeforeUnmount(() => {
             v-if="cardId"
             class="no-drag-image"
             :src="getImageUrl('sc', cardId)"
-            :alt="cardId"
+            :alt="getCardAlt(cardId)"
+            loading="lazy"
             draggable="false"
             :style="{
               width: '100%',
@@ -392,15 +395,12 @@ onBeforeUnmount(() => {
         v-if="infoOpen"
         :style="infoPopupStyle"
       >
-        <div :style="{ fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '0.45rem' }">※ 習作。鋭意開発中です。画像は今のところ4弾まで追加済</div>
-        <div :style="{ borderTop: '1px solid var(--border-color)', marginBottom: '0.6rem' }"></div>
-
         <div :style="{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.45rem' }">1. このサイトについて</div>
         <ul :style="{ margin: 0, paddingLeft: '1.1rem', display: 'grid', gap: '0.35rem', fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '0.75rem' }">
-          <li>蟲神器のデッキをURLとして共有できます。URLなので、ブラウザのブックマークでも保存できます。</li>
-          <li>表示環境次第でレイアウトが崩れる可能性があります。</li>
+          <li>蟲神器のデッキをURLで共有できます。ブックマークも可能です。</li>
           <li>各パネルは折り畳めます。</li>
           <li>PCからであれば、右クリックでカードを追加せず拡大表示できます。</li>
+          <li>開発者の環境に合わせた表示になっており、環境次第でレイアウトが崩れる可能性があります。PCのChromeと、iPhoneで確認しています。</li>
         </ul>
 
         <div :style="{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.45rem' }">2. 表示画像について</div>
@@ -428,7 +428,7 @@ onBeforeUnmount(() => {
         v-if="hoveredCardId && mousePos"
         class="no-drag-image"
         :src="getImageUrl('lc', hoveredCardId)"
-        :alt="hoveredCardId"
+        :alt="getCardAlt(hoveredCardId)"
         draggable="false"
         @dragstart.prevent
         @contextmenu.prevent
