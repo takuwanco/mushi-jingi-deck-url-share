@@ -33,6 +33,7 @@ const MOVE_CANCEL_PX = 12
 const BASE_URL = import.meta.env.BASE_URL
 
 const cards = ref<CardMeta[]>(normalizedCards)
+const setOptions = computed(() => [...new Set(cards.value.map(card => card.set))].sort())
 const hoveredCard = ref<string | null>(null)
 const mousePos = ref<{ x: number; y: number } | null>(null)
 const longPressTimer = ref<number | null>(null)
@@ -264,7 +265,7 @@ onBeforeUnmount(() => {
       >
         <MultiSelect
           label="セット"
-          :options="['01', '02', '03', '04', '05', '06', '07']"
+          :options="setOptions"
           :selected="filters.sets"
           :compact="compact"
           @change="value => setFilter('sets', value)"
