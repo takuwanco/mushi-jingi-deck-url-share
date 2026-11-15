@@ -4507,6 +4507,582 @@
     "set": "07",
     "color": "-",
     "type": "術"
+  },
+  {
+    "id": "08-001",
+    "name": "ペルビアンジャイアントオオムカデ",
+    "rarelity": "LR",
+    "cost": 6,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-002",
+    "name": "オオルリボシヤンマ",
+    "rarelity": "N",
+    "cost": 5,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-003",
+    "name": "トゲアクマツユムシ",
+    "rarelity": "SR",
+    "cost": 5,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-004",
+    "name": "ハナカマキリ",
+    "rarelity": "UR",
+    "cost": 3,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-005",
+    "name": "キララシロカネグモ",
+    "rarelity": "SR",
+    "cost": 2,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-006",
+    "name": "ギガスオオアリ",
+    "rarelity": "SR",
+    "cost": 5,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-007",
+    "name": "ミナミミイデラゴミムシ",
+    "rarelity": "R",
+    "cost": 4,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-008",
+    "name": "ミイデラゴミムシ",
+    "rarelity": "UR",
+    "cost": 4,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-009",
+    "name": "コガタスズメバチ",
+    "rarelity": "N",
+    "cost": 4,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-010",
+    "name": "キバハリアリ",
+    "rarelity": "N",
+    "cost": 3,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-011",
+    "name": "イエロージャイアントヒヨケムシ",
+    "rarelity": "SR",
+    "cost": 5,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-012",
+    "name": "ツメジムカデ",
+    "rarelity": "N",
+    "cost": 2,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-013",
+    "name": "アリヅカコオロギ",
+    "rarelity": "R",
+    "cost": 2,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-014",
+    "name": "ニホンカワトンボ",
+    "rarelity": "N",
+    "cost": 1,
+    "set": "08",
+    "color": "赤",
+    "type": "虫"
+  },
+  {
+    "id": "08-015",
+    "name": "コーカサスオオカブト",
+    "rarelity": "LR",
+    "cost": 6,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-016",
+    "name": "アトラスオオカブト",
+    "rarelity": "UR",
+    "cost": 5,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-017",
+    "name": "インペラトールホソアカクワガタ",
+    "rarelity": "SR",
+    "cost": 4,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-018",
+    "name": "モーレンカンプオオカブト",
+    "rarelity": "R",
+    "cost": 4,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-019",
+    "name": "アカボシゴマダラ",
+    "rarelity": "SR",
+    "cost": 4,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-020",
+    "name": "ケンタウルスオオカブト",
+    "rarelity": "SR",
+    "cost": 4,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-021",
+    "name": "ミカドアゲハ",
+    "rarelity": "R",
+    "cost": 3,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-022",
+    "name": "エンガノオオカブト",
+    "rarelity": "N",
+    "cost": 3,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-023",
+    "name": "オオハキリバチ",
+    "rarelity": "R",
+    "cost": 3,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-024",
+    "name": "ヤマトハキリバチ",
+    "rarelity": "R",
+    "cost": 2,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-025",
+    "name": "アカエゾゼミ",
+    "rarelity": "N",
+    "cost": 4,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-026",
+    "name": "ジュウサンネンゼミ",
+    "rarelity": "R",
+    "cost": 2,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-027",
+    "name": "ミドリシジミ",
+    "rarelity": "SR",
+    "cost": 2,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-028",
+    "name": "ヒメカブト",
+    "rarelity": "N",
+    "cost": 2,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-029",
+    "name": "ヒメウラナミジャノメ",
+    "rarelity": "N",
+    "cost": 1,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-030",
+    "name": "パンダアリバチ",
+    "rarelity": "N",
+    "cost": 2,
+    "set": "08",
+    "color": "青",
+    "type": "虫"
+  },
+  {
+    "id": "08-031",
+    "name": "サルオガセツユムシ",
+    "rarelity": "LR",
+    "cost": 6,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-032",
+    "name": "ヨナグニサン（幼虫）",
+    "rarelity": "UR",
+    "cost": 6,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-033",
+    "name": "トノサマバッタ",
+    "rarelity": "UR",
+    "cost": 5,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-034",
+    "name": "カツオゾウムシ",
+    "rarelity": "N",
+    "cost": 2,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-035",
+    "name": "オウサマミツギリゾウムシ",
+    "rarelity": "R",
+    "cost": 5,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-036",
+    "name": "アカボシゴマダラ（幼虫）",
+    "rarelity": "R",
+    "cost": 3,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-037",
+    "name": "クロカタゾウムシ",
+    "rarelity": "UR",
+    "cost": 3,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-038",
+    "name": "ミカドアゲハ（幼虫）",
+    "rarelity": "N",
+    "cost": 2,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-039",
+    "name": "コウテイブローチハムシ",
+    "rarelity": "R",
+    "cost": 1,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-040",
+    "name": "ハサミツノカメムシ",
+    "rarelity": "R",
+    "cost": 3,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-041",
+    "name": "クサギカメムシ",
+    "rarelity": "N",
+    "cost": 2,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-042",
+    "name": "ヤマトシロアリソルジャー",
+    "rarelity": "SR",
+    "cost": 3,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-043",
+    "name": "ヤマトシロアリワーカー",
+    "rarelity": "N",
+    "cost": 2,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-044",
+    "name": "ヤマトシロアリニンフ",
+    "rarelity": "R",
+    "cost": 1,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-045",
+    "name": "アレクサンドラトリバネアゲハ（幼虫）",
+    "rarelity": "UR",
+    "cost": 3,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-046",
+    "name": "モモアカアブラムシ",
+    "rarelity": "N",
+    "cost": 1,
+    "set": "08",
+    "color": "緑",
+    "type": "虫"
+  },
+  {
+    "id": "08-047",
+    "name": "鬼蜻蜓の簪",
+    "rarelity": "SR",
+    "cost": 3,
+    "set": "08",
+    "color": "-",
+    "type": "強化"
+  },
+  {
+    "id": "08-048",
+    "name": "百足の具足",
+    "rarelity": "R",
+    "cost": 0,
+    "set": "08",
+    "color": "-",
+    "type": "強化"
+  },
+  {
+    "id": "08-049",
+    "name": "黄金虫の六文銭",
+    "rarelity": "R",
+    "cost": 0,
+    "set": "08",
+    "color": "-",
+    "type": "強化"
+  },
+  {
+    "id": "08-050",
+    "name": "幻惑の蛍袋",
+    "rarelity": "N",
+    "cost": 0,
+    "set": "08",
+    "color": "-",
+    "type": "強化"
+  },
+  {
+    "id": "08-051",
+    "name": "影武者の魔鏡",
+    "rarelity": "LR",
+    "cost": 1,
+    "set": "08",
+    "color": "-",
+    "type": "強化"
+  },
+  {
+    "id": "08-052",
+    "name": "亀虫の盾甲冑",
+    "rarelity": "SR",
+    "cost": 0,
+    "set": "08",
+    "color": "-",
+    "type": "強化"
+  },
+  {
+    "id": "08-053",
+    "name": "傀儡の冬虫夏草",
+    "rarelity": "SR",
+    "cost": 1,
+    "set": "08",
+    "color": "-",
+    "type": "強化"
+  },
+  {
+    "id": "08-054",
+    "name": "玉虫の色真似巻",
+    "rarelity": "N",
+    "cost": 0,
+    "set": "08",
+    "color": "-",
+    "type": "強化"
+  },
+  {
+    "id": "08-055",
+    "name": "蟲術の息吹",
+    "rarelity": "R",
+    "cost": 0,
+    "set": "08",
+    "color": "-",
+    "type": "術"
+  },
+  {
+    "id": "08-056",
+    "name": "半死の道連れ",
+    "rarelity": "SR",
+    "cost": 3,
+    "set": "08",
+    "color": "-",
+    "type": "術"
+  },
+  {
+    "id": "08-057",
+    "name": "水月の激流",
+    "rarelity": "N",
+    "cost": 3,
+    "set": "08",
+    "color": "-",
+    "type": "術"
+  },
+  {
+    "id": "08-058",
+    "name": "神楽の烈風",
+    "rarelity": "R",
+    "cost": 4,
+    "set": "08",
+    "color": "-",
+    "type": "術"
+  },
+  {
+    "id": "08-059",
+    "name": "火花の嵐",
+    "rarelity": "N",
+    "cost": 0,
+    "set": "08",
+    "color": "-",
+    "type": "術"
+  },
+  {
+    "id": "08-060",
+    "name": "蛹の冬籠り",
+    "rarelity": "N",
+    "cost": 0,
+    "set": "08",
+    "color": "-",
+    "type": "術"
+  },
+  {
+    "id": "08-061",
+    "name": "断界の虫送り",
+    "rarelity": "SR",
+    "cost": 4,
+    "set": "08",
+    "color": "-",
+    "type": "術"
+  },
+  {
+    "id": "08-062",
+    "name": "冥府の導き",
+    "rarelity": "LR",
+    "cost": 2,
+    "set": "08",
+    "color": "-",
+    "type": "術"
+  },
+  {
+    "id": "08-063",
+    "name": "蚕の口封じ",
+    "rarelity": "N",
+    "cost": 2,
+    "set": "08",
+    "color": "-",
+    "type": "術"
+  },
+  {
+    "id": "08-064",
+    "name": "金色の腕",
+    "rarelity": "R",
+    "cost": 0,
+    "set": "08",
+    "color": "-",
+    "type": "術"
   }
 ]
 
